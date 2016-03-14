@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.3.0
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: pmZP3p5PRHcezb7iFYF+O53fhkynTG5qlgiXc8yUqZJxNkd0hqqdEkWniOLZZD5/ZFfJpF3OuvB/Wd0GiV12HC2ugP5dDZHLpVpmA4rY8CXLRP6O0Q+C5MIxhEss+oejR8I9Nu9Z9ymLKjOwifg6kvJw9fbi4LCjFZqeME6YmpWCfOnzfVq0VYz0wFM+mu6IzyvM0+gK7ZL+Ug+iTKq3mZejkd9ng5REMSZGlkzdemx722JXk5GPzvWu2AKmalSpxW61a+UaW8tg7oyXZCoBRAGpGhmXAh4yPa+BJPdoY2S2jHNi6dS+7tT6kgJ9qoyXVht1ko+Iyr5Yw7nQqNW9fvYLI1oAC6g6zrI6XqdIBDiQKZvaZhcUKzGnpa0tPucdFYtqVBZ0h4wSIUKW/y8zRg9IvhYHEjd+X5Nc0qT9E6C0usWfxpHqDv2VQTkAIgiGckAtflZ9vfx/ZPR6xIcIyN1w5BZzMuvvM9opAc/RA/a+W4jbyY+yczqEf5fisHwQ8BEvpcNiNO3bjnB2ym348WTqPcd08j6ie3Anp2TUN3WeA2aFiVFO5gfeaL1VxF2kZwwvbbEu4HDUXardxz2NxZjkfKBupoABFgvBkB4eEL7OalPfBvfbKU0thBJGPzuuLy6Ozx4zYYU3G8yNlgO1qiFKE6u0l4vkP7KujDCZFG4=
+  app: twit-wit
+  on:
+    repo: ardnehsan/lab6
