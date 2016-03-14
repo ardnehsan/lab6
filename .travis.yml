@@ -13,3 +13,6 @@ deploy:
   app: twit-wit
   on:
     repo: ardnehsan/lab6
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
