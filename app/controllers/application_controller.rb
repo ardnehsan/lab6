@@ -3,14 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action do
-    @current_user = User.find_by id: session[:user_id]
-  end
-
-  def authenticate_user!
+  def authenticate_user
+    user_id = session[:user_id]
+    @current_user = User.find_by id: user_id
     if @current_user.blank?
       redirect_to sign_in_path
     end
   end
 
+  helper_method :user_signed_in?
+  def user_signed_in?
+    @current_user.present?
+  end
 end

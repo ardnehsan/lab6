@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-2">
+    <div class="image_profile">
+      <img src="http://www.themarysue.com/wp-content/uploads/2013/05/tumblr_mnhcizzGwr1qzfsnio3_1280-580x435.jpg" alt="" class="img-rounded" style="width:150px;"/>
+    </div>
+  </br>
+  <div class="createposts">
+<%= form_for @post do |f| %>
+<%= f.text_area :content, as: :content, class:"newpost", placeholder:"Whats Happenin Lover(boy/girl)?"%>
+<%= f.submit "Post it!", class: "newpostsubmit" %>
+<%end %>
+</div>
+  <ul>
+    <li><%= @current_user.email.upcase %></li>
+
+    <% @current_user.following_users.each do |user| %>
+    <li>
+      <strong><%= user.email %></strong>
+      <%= link_to "Unfollow", stop_follow_user_path(id: user.id), method: :post %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+</div>

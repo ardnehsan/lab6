@@ -1,0 +1,17 @@
+<div class="container">
+
+<%= simple_form_for @user do |f|%>
+<div class="form-group">
+  <%= f.input :email %>
+</div>
+<div class="form-group">
+    <%= f.input :password %>
+</div>
+<div class="form-group">
+    <%= f.input :password_confirmation, label: "Password Confirmation" %>
+</div>
+<div class="form-group">
+    <%= f.submit "Sign Up", class: "btn btn-primary btn-block btn-lg" %>
+</div>
+<%end%>
+</div>

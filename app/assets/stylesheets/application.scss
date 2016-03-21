@@ -1,0 +1,21 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.container{
+  margin-top: 100px;
+  margin-right: 100px;
+
+}
+
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  display: inline;
+  padding-left:0px;
+}
+
+li{
+  padding-left:0px;
+}

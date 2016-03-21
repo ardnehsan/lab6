@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'minitest-rails'
   gem 'minitest-rails-capybara'
 end
 
@@ -46,4 +47,20 @@ group :development do
   gem 'spring'
 end
 
-  gem 'minitest-rails'
+  gem 'bootstrap-sass'
+
+  gem 'rails-erd'
+
+  gem 'kaminari'
+
+  gem "acts_as_follower"
+
+
+  gem "simple_form"
+
+  gem 'faker', '~> 1.4.3'
+
+
+group :production do
+  gem 'rails_12factor'
+end
