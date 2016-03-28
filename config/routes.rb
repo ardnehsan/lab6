@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
+  get 'users/new' => 'users#new', as: :sign_up
+  get '/users' => 'users#index', as: :users
+  get '/users/:id/profile' => 'users#show', as: :user
+  post '/users' => 'users#create'
 
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
   delete 'sign_in' => 'sessions#delete', as: :sign_out
 
-  get 'users/new' => 'users#new', as: :sign_up
-  post '/users' => 'users#create', as: :users
-
   get 'post/:id' => 'post#detail', as: :post
-  get 'post/new' => 'post#new', as: :new
+  get 'newposts' => 'post#new', as: :new
   post 'posts/dashboard' => 'posts#create', as: :posts
 
   get 'dashboard' => 'home#dashboard', as: :dashboard
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   post 'user/:id/follow' => 'follow#create', as: :follow_user
   post 'user/:id/stop-follow' => 'follow#delete', as: :stop_follow_user
 
-  root 'home#site'
+  root 'home#dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

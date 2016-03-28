@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @user = User.all
+    @post=Post.all
   end
 
   def new
@@ -32,5 +33,6 @@ class UsersController < ApplicationController
     @current_user.stop_following user
       redirect_to dashboard_path, notice: "Unfollow #{user.email}"
   end
+
 
 end

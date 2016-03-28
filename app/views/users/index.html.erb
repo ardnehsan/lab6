@@ -1,0 +1,13 @@
+<%= render "layouts/header" %>
+<div class="form-group">
+<br>
+<br>
+<h1>Heroes</h1>
+<% @post.each do |f| %>
+<ul>
+<li><%= f.user.email %></li>
+<small><li><%= f.content %> </li></small>
+
+</ul>
+<% end %>
+</div>
