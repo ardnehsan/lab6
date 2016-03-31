@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
+def show
+  @user_profile= User.find_by id: params[:id]
+end
   def create
     @user = User.new params.require(:user).permit(:email, :password, :password_confirmation)
     if @user.save

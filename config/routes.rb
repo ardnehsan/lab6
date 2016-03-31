@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new', as: :sign_up
   get '/users' => 'users#index', as: :users
-  get '/users/:id/profile' => 'users#show', as: :user
+  get '/users/:id/profile' => 'home#dashboard', as: :dashboard
+  get '/users/:id' =>'users#show', as: :user 
   post '/users' => 'users#create'
 
   get 'sign_in' => 'sessions#new', as: :sign_in
@@ -12,8 +13,6 @@ Rails.application.routes.draw do
   get 'post/:id' => 'post#detail', as: :post
   get 'newposts' => 'post#new', as: :new
   post 'posts/dashboard' => 'posts#create', as: :posts
-
-  get 'dashboard' => 'home#dashboard', as: :dashboard
 
   post 'user/:id/follow' => 'follow#create', as: :follow_user
   post 'user/:id/stop-follow' => 'follow#delete', as: :stop_follow_user

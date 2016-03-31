@@ -12,9 +12,8 @@
 <%= f.submit "Post it!", class: "newpostsubmit" %>
 <%end %>
 
-<% @current_user.posts.each do |post|%>
+<% @current_user.posts.reverse.each do |post|%>
 <li><%= post.content%></li>
-  <strong><%= post.user.email%></strong>
 <%end%>
 
 </div>

@@ -3,11 +3,15 @@
 <br>
 <br>
 <h1>Heroes</h1>
-<% @post.each do |f| %>
+<% @user.each do |f| %>
 <ul>
-<li><%= f.user.email %></li>
-<small><li><%= f.content %> </li></small>
+<li><%= link_to user_path(id: f.id) do %><%= f.email %><%end%></li>
+
+<% f.posts.reverse.each do |x|%>
+<small><li><%= x.content %> </li></small>
 
 </ul>
 <% end %>
+<%end%>
+
 </div>

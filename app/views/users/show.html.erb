@@ -1,0 +1,4 @@
+<%=@user_profile.email%>
+
+<%= link_to "Stop Following", stop_follow_user_path(id: @user_profile.id), method: :post %>
+<%= link_to "Follow", follow_user_path(id: @user_profile.id), method: :post%>
