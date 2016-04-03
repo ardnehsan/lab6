@@ -61,6 +61,11 @@ end
 
   gem 'faker', '~> 1.4.3'
 
+  gem "refile", require: "refile/rails"
+
+  gem "refile-mini_magick"
+
+  gem 'refile-postgres'
 
 group :production do
   gem 'rails_12factor'

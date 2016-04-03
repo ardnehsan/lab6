@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @user = User.all
-    @post=Post.all
+    @post=Post.all.reverse
   end
 
   def new
@@ -12,12 +12,13 @@ class UsersController < ApplicationController
   end
 def show
   @user_profile= User.find_by id: params[:id]
+  @postit=Post.find_by id: params[:id]
 end
   def create
     @user = User.new params.require(:user).permit(:email, :password, :password_confirmation)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to dashboard_path
+      redirect_to home_dashboard_path
     else
     flash.now[:alert] = "Your email/password combination does NOT work!"
      render :new
