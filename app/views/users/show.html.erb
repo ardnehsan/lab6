@@ -1,4 +1,20 @@
-<%=@user_profile.email%>
+<%= render "layouts/header" %>
 
-<%= link_to "Stop Following", stop_follow_user_path(id: @user_profile.id), method: :post %>
-<%= link_to "Follow", follow_user_path(id: @user_profile.id), method: :post%>
+
+<div class="">
+<h1><%= @user_profile.email%></h1>
+<img src="<%= @user_profile.photo_id%>" alt="" />
+
+<p>
+  <% @user_profile.posts.reverse.each do |f|%>
+  <%=f.content%>
+  <br>
+  <%end%>
+</p>
+
+</div>
+
+<ul>
+<li><%= link_to "Follow", follow_user_path(id: @user_profile.id), method: :post%></li>
+<li><%= link_to "Stop Following", stop_follow_user_path(id: @user_profile.id), method: :post %></li>
+</ul>

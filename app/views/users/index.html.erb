@@ -1,17 +1,18 @@
 <%= render "layouts/header" %>
-<div class="form-group">
-<br>
-<br>
-<h1>Heroes</h1>
-<% @user.each do |f| %>
+<div class="stuff">
+<h1>Bots</h1>
+<% @post.each do |f| %>
 <ul>
-<li><%= link_to user_path(id: f.id) do %><%= f.email %><%end%></li>
+<div class="linephoto">
+  <li><img src="<%= f.user.photo_id%>" alt=""/></li>
+</div>
 
-<% f.posts.reverse.each do |x|%>
-<small><li><%= x.content %> </li></small>
+<li><%= link_to user_path(id: f.user.id) do %><%= f.user.email %><%end%></li>
+
+  <small><li><%= f.content %> </li></small>
+
 
 </ul>
-<% end %>
 <%end%>
 
 </div>
