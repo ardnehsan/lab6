@@ -1,7 +1,7 @@
-User.create email:"nash", password: "nash"
+User.create email:"nash", password: "nash", photo_id: "rinzler.png"
 
 30.times do
-user = User.create email: Faker::Internet.email, password: "p", password_confirmation: "p", photo_id:Faker::Avatar.image
+user = User.create email: Faker::App.name, password: "p", password_confirmation: "p", photo_id:Faker::Avatar.image
 end
 
 50.times do

@@ -18,13 +18,4 @@ class HomeController < ApplicationController
     end
   end
 
-  def create
-    @post = Post.new params.require(:post).permit(:content)
-    @post.user = @post_user
-    if @post.save
-      redirect_to dashboard_path
-    else
-      render :new
-    end
-  end
 end
