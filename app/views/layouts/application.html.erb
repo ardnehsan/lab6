@@ -4,10 +4,14 @@
   <title>Lab6</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
+<body style="background-color:black">
+
 <body>
-  <div class="container">
+<div class="container">
+
 
         <% if alert %>
           <div class="alert alert-danger"><%= alert %></div>
@@ -16,9 +20,8 @@
         <% if notice %>
           <div class="alert alert-info"><%= notice %></div>
         <% end %>
-</div>
 <%= yield %>
-
+</div>
 
 </body>
 </html>

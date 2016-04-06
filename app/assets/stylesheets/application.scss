@@ -5,25 +5,27 @@
 .container{
   display: flex;
   flex-direction: column;
-  margin-top: 26px;
+  margin-top: 50px;
   margin-right: 100px;
-  background-image: image_url('tron-circle.png');
+  background-image: image_url('tron-guy.png');
   background-size: 100% 100%;
    background-position: center top;
    width: 100%;
-   height: 100%;
+   height: 800px;
    text-color:#2DF6FC;
    background-color: #2DF6FC;
    color: orange;
+   font-family: 'Orbitron', sans-serif;
 }
 
-.thing{
-  margin:0;
-  background-image: image_url('tron-circle.png');
-  background-repeat: no-repeat;
-  background-size: 100% 800px;;
-  height:800px;
-  color: orange;
+.container-fluid{
+  display: flex;
+}
+
+
+.tronlogo img{
+  width:100px;
+  height: 60px;
 }
 
 
@@ -32,9 +34,9 @@
   border-bottom: 1px solid #2DF6FC;
 }
 
-.followers{
-
-  background-color: #99ccff;
+.peoples{
+  width: 500px;
+  border: 1px solid #2DF6FC;
 }
 
 ul {
@@ -53,4 +55,14 @@ ul {
 
 .glyphicon{
   color:#2DF6FC;
+}
+
+
+.nav{
+  display: flex;
+}
+
+.thing{
+  display: flex;
+  flex-direction: row;
 }

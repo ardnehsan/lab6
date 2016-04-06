@@ -1,8 +1,11 @@
 <%= render "layouts/header" %>
 <div class="stuff">
-<h1>Bots</h1>
+<h1>Programs</h1>
 <% @post.each do |f| %>
 <ul>
+
+<div class="peoples">
+
 <div class="linephoto">
   <li><img src="<%= f.user.photo_id%>" alt=""/></li>
 </div>
@@ -11,8 +14,10 @@
 
   <small><li><%= f.content %> </li></small>
 
+</div>
 
 </ul>
 <%end%>
 
 </div>
+<nav><%= paginate @users %></nav>
